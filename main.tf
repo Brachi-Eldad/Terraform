@@ -1,8 +1,8 @@
 terraform {
   required_providers {
     docker = {
-      source  = "kreuzwerker/docker"
-      version = "2.7.2"
+      source = "kreuzwerker/docker"
+      version = "~> 3.0.1"
     }
   }
 }
@@ -16,7 +16,7 @@ resource "docker_image" "nginx" {
 
 resource "docker_container" "nginx" {
   image = docker_image.nginx.latest
-  name  = var.container_name
+  name  = "Brachi"
   ports {
     internal = 80
     external = 8080
